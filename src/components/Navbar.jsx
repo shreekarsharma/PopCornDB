@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFilm, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+
 const Navbar = () => {
   return (
-    <div className="navbar bg-sky-700 shadow-sm sticky top-0 z-50">
+    <div className="navbar bg-sky-50 shadow-sm sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -23,23 +26,31 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-sky-700 rounded-box z-1 mt-3 w-52 p-2 shadow gap-3 w-screen"
+            className="menu menu-sm dropdown-content bg-sky-50 rounded-box z-1 mt-3 p-2 shadow gap-3 w-95"
           >
             <li className="font-medium">
               <details>
                 <summary className="text-base">Movies</summary>
                 <ul className="p-2 bg-sky-700">
                   <li>
-                    <Link to="/movies/popular" className="text-base">Popular</Link>
+                    <Link to="/movies/popular/1" className="text-base">
+                      Popular
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/movies/now-playing" className="text-base">Now Playing</Link>
+                    <Link to="/movies/now-playing/1" className="text-base">
+                      Now Playing
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/movies/upcoming" className="text-base">Upcoming</Link>
+                    <Link to="/movies/upcoming/1" className="text-base">
+                      Upcoming
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/movies/top-rated" className="text-base">Top Rated</Link>
+                    <Link to="/movies/top-rated/1" className="text-base">
+                      Top Rated
+                    </Link>
                   </li>
                 </ul>
               </details>
@@ -47,18 +58,26 @@ const Navbar = () => {
             <li className="font-medium">
               <details>
                 <summary className="text-base">TV Shows</summary>
-                <ul className="p-2 bg-sky-700">
+                <ul className="p-2 bg-sky-50">
                   <li>
-                    <Link to="/tv/popular" className="text-base">Popular</Link>
+                    <Link to="/tvshow/popular/1" className="text-base">
+                      Popular
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/tv/airing-today" className="text-base">Airing Today</Link>
+                    <Link to="/tvshow/airing-today/1" className="text-base">
+                      Airing Today
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/tv/on-the-air" className="text-base">On TV</Link>
+                    <Link to="/tvshow/on-the-air/1" className="text-base">
+                      On TV
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/tv/top-rated" className="text-base">Top Rated</Link>
+                    <Link to="/tvshow/top-rated/1" className="text-base">
+                      Top Rated
+                    </Link>
                   </li>
                 </ul>
               </details>
@@ -66,26 +85,22 @@ const Navbar = () => {
             <li className="font-medium">
               <details>
                 <summary className="text-base">People</summary>
-                <ul className="p-2 bg-sky-700">
+                <ul className="p-2 bg-sky-50">
                   <li>
-                    <Link to="/person" className="text-base">Popular</Link>
+                    <Link to="/people/1" className="text-base">
+                      Popular
+                    </Link>
                   </li>
                 </ul>
               </details>
             </li>
-            <li className="font-medium gap-2">
-              <input
-                type="text"
-                placeholder="Search Movie, TV Show, Person"
-                className="input w-full focus:outline-sky-950 bg-sky-200 text-sky-950 text-base font-medium"
-              />
-              <button className="btn btn-outline hover:bg-sky-950 text-base">
-                Search
-              </button>
+            <li className="font-medium">
+              <Link to="/search" className="text-base"><FontAwesomeIcon icon={faMagnifyingGlass} className="text-xl" /></Link>
             </li>
           </ul>
         </div>
         <Link className="btn btn-ghost text-xl" to="/">
+          <FontAwesomeIcon icon={faFilm} />
           PopCornDB
         </Link>
       </div>
@@ -93,61 +108,78 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">
           <li className="font-medium">
             <details>
-              <summary>Movies</summary>
-              <ul className="p-2 bg-sky-700">
+              <summary className="text-base">Movies</summary>
+              <ul className="p-2 bg-sky-50">
                 <li>
-                  <Link to="/movies/popular">Popular</Link>
+                  <Link to="/movies/popular/1" className="text-base">
+                    Popular
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/movies/now-playing">Now Playing</Link>
+                  <Link to="/movies/now-playing/1" className="text-base">
+                    Now Playing
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/movies/upcoming">Upcoming</Link>
+                  <Link to="/movies/upcoming/1" className="text-base">
+                    Upcoming
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/movies/top-rated">Top Rated</Link>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li className="font-medium">
-            <details>
-              <summary>TV Shows</summary>
-              <ul className="p-2 bg-sky-700">
-                <li>
-                  <Link to="/tv/popular">Popular</Link>
-                </li>
-                <li>
-                  <Link to="/tv/airing-today">Airing Today</Link>
-                </li>
-                <li>
-                  <Link to="/tv/on-the-air">On TV</Link>
-                </li>
-                <li>
-                  <Link to="/tv/top-rated">Top Rated</Link>
+                  <Link to="/movies/top-rated/1" className="text-base">
+                    Top Rated
+                  </Link>
                 </li>
               </ul>
             </details>
           </li>
           <li className="font-medium">
             <details>
-              <summary>People</summary>
-              <ul className="p-2 bg-sky-700">
+              <summary className="text-base">TV Shows</summary>
+              <ul className="p-2 bg-sky-50">
                 <li>
-                  <Link to="/person">Popular</Link>
+                  <Link to="/tvshow/popular/1" className="text-base">
+                    Popular
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tvshow/airing-today/1" className="text-base">
+                    Airing Today
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tvshow/on-the-air/1" className="text-base">
+                    On TV
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/tvshow/top-rated/1" className="text-base">
+                    Top Rated
+                  </Link>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li className="font-medium">
+            <details>
+              <summary className="text-base">People</summary>
+              <ul className="p-2 bg-sky-50">
+                <li>
+                  <Link to="/people/1" className="text-base">
+                    Popular
+                  </Link>
                 </li>
               </ul>
             </details>
           </li>
         </ul>
       </div>
-      <div className="navbar-end gap-2 hidden lg:flex">
-        <input
-          type="text"
-          placeholder="Search Movie, TV Show, Person"
-          className="input w-100 focus:outline-sky-950 bg-sky-200 text-sky-950 text-base font-medium"
-        />
-        <button className="btn btn-outline hover:bg-sky-950">Search</button>
+      <div className="navbar-end hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          <li className="font-medium">
+            <Link to="/search" className="text-base"><FontAwesomeIcon icon={faMagnifyingGlass} className="text-xl" /></Link>
+          </li>
+        </ul>
       </div>
     </div>
   );

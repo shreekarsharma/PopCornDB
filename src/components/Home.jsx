@@ -3,6 +3,7 @@ import { TmdbConfigContext } from "../App";
 import useFetchData from "../hooks/useFetchData";
 import noPoster from "../assets/poster.png";
 import noPhoto from "../assets/photo.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { baseURL, options } = useContext(TmdbConfigContext);
@@ -34,32 +35,34 @@ const Home = () => {
   };
 
   return (
-    <div className="p-10">
+    <div className="px-5 py-10">
       {/* Trending Movies Carousel */}
       <div>
-        <h1>Trending Movies</h1>
+        <h1 className="text-lg mb-5 font-medium">Trending Movies</h1>
         <div className="tabs tabs-lift">
           <input
             type="radio"
             name="trending_movies_tab"
-            className="tab"
+            className="tab font-medium text-base border-gray-300 checked:border-gray-300"
             aria-label="Today"
             defaultChecked
           />
-          <div className="tab-content bg-base-100 border-base-300 p-6">
+          <div className="tab-content p-6 border border-gray-300 shadow-sm">
             <div className="carousel rounded-box">
               {trending.movies.today?.data?.results?.map((movie) => {
                 return (
                   <div className="carousel-item p-2" key={movie.id}>
-                    <img
-                      className="w-50"
-                      src={
-                        movie.poster_path
-                          ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
-                          : noPoster
-                      }
-                      alt={movie.title}
-                    />
+                    <Link to={`/movie/${movie.id}`}>
+                      <img
+                        className="w-50"
+                        src={
+                          movie.poster_path
+                            ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                            : noPoster
+                        }
+                        alt={movie.title}
+                      />
+                    </Link>
                   </div>
                 );
               })}
@@ -69,23 +72,25 @@ const Home = () => {
           <input
             type="radio"
             name="trending_movies_tab"
-            className="tab"
+            className="tab font-medium text-base border-gray-300 checked:border-gray-300"
             aria-label="This Week"
           />
-          <div className="tab-content bg-base-100 border-base-300 p-6">
+          <div className="tab-content p-6 border border-gray-300 shadow-sm">
             <div className="carousel rounded-box">
               {trending.movies.week?.data?.results?.map((movie) => {
                 return (
                   <div className="carousel-item p-2" key={movie.id}>
-                    <img
-                      className="w-50"
-                      src={
-                        movie.poster_path
-                          ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
-                          : noPoster
-                      }
-                      alt={movie.title}
-                    />
+                    <Link to={`/movie/${movie.id}`}>
+                      <img
+                        className="w-50"
+                        src={
+                          movie.poster_path
+                            ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                            : noPoster
+                        }
+                        alt={movie.title}
+                      />
+                    </Link>
                   </div>
                 );
               })}
@@ -95,29 +100,31 @@ const Home = () => {
       </div>
       {/* Trending TV Shows Carousel */}
       <div>
-        <h1>Trending TV Shows</h1>
+        <h1 className="text-lg my-5 font-medium">Trending TV Shows</h1>
         <div className="tabs tabs-lift">
           <input
             type="radio"
             name="trending_tv_shows_tab"
-            className="tab"
+            className="tab font-medium text-base border-gray-300 checked:border-gray-300"
             aria-label="Today"
             defaultChecked
           />
-          <div className="tab-content bg-base-100 border-base-300 p-6">
+          <div className="tab-content p-6 border border-gray-300 shadow-sm">
             <div className="carousel rounded-box">
               {trending.tvshows.today?.data?.results?.map((tvshow) => {
                 return (
                   <div className="carousel-item p-2" key={tvshow.id}>
-                    <img
-                      className="w-50"
-                      src={
-                        tvshow.poster_path
-                          ? `https://image.tmdb.org/t/p/original${tvshow.poster_path}`
-                          : noPoster
-                      }
-                      alt={tvshow.title}
-                    />
+                    <Link to={`/tv/${tvshow.id}`}>
+                      <img
+                        className="w-50"
+                        src={
+                          tvshow.poster_path
+                            ? `https://image.tmdb.org/t/p/original${tvshow.poster_path}`
+                            : noPoster
+                        }
+                        alt={tvshow.title}
+                      />
+                    </Link>
                   </div>
                 );
               })}
@@ -127,23 +134,25 @@ const Home = () => {
           <input
             type="radio"
             name="trending_tv_shows_tab"
-            className="tab"
+            className="tab font-medium text-base border-gray-300 checked:border-gray-300"
             aria-label="This Week"
           />
-          <div className="tab-content bg-base-100 border-base-300 p-6">
+          <div className="tab-content p-6 border border-gray-300 shadow-sm">
             <div className="carousel rounded-box">
               {trending.tvshows.week?.data?.results?.map((tvshow) => {
                 return (
                   <div className="carousel-item p-2" key={tvshow.id}>
-                    <img
-                      className="w-50"
-                      src={
-                        tvshow.poster_path
-                          ? `https://image.tmdb.org/t/p/original${tvshow.poster_path}`
-                          : noPoster
-                      }
-                      alt={tvshow.title}
-                    />
+                    <Link to={`/tv/${tvshow.id}`}>
+                      <img
+                        className="w-50"
+                        src={
+                          tvshow.poster_path
+                            ? `https://image.tmdb.org/t/p/original${tvshow.poster_path}`
+                            : noPoster
+                        }
+                        alt={tvshow.title}
+                      />
+                    </Link>
                   </div>
                 );
               })}
@@ -153,29 +162,31 @@ const Home = () => {
       </div>
       {/* Trending People Carousel */}
       <div>
-        <h1>Trending People</h1>
+        <h1 className="text-lg my-5 font-medium">Trending People</h1>
         <div className="tabs tabs-lift">
           <input
             type="radio"
             name="trending_people_tab"
-            className="tab"
+            className="tab font-medium text-base border-gray-300 checked:border-gray-300"
             aria-label="Today"
             defaultChecked
           />
-          <div className="tab-content bg-base-100 border-base-300 p-6">
+          <div className="tab-content p-6 border border-gray-300 shadow-sm">
             <div className="carousel rounded-box">
               {trending.people.today?.data?.results?.map((person) => {
                 return (
                   <div className="carousel-item p-2" key={person.id}>
-                    <img
-                      className="w-50"
-                      src={
-                        person.profile_path
-                          ? `https://image.tmdb.org/t/p/original${person.profile_path}`
-                          : noPhoto
-                      }
-                      alt={person.name}
-                    />
+                    <Link to={`/person/${person.id}`}>
+                      <img
+                        className="w-50"
+                        src={
+                          person.profile_path
+                            ? `https://image.tmdb.org/t/p/original${person.profile_path}`
+                            : noPhoto
+                        }
+                        alt={person.name}
+                      />
+                    </Link>
                   </div>
                 );
               })}
@@ -185,23 +196,25 @@ const Home = () => {
           <input
             type="radio"
             name="trending_people_tab"
-            className="tab"
+            className="tab font-medium text-base border-gray-300 checked:border-gray-300"
             aria-label="This Week"
           />
-          <div className="tab-content bg-base-100 border-base-300 p-6">
+          <div className="tab-content p-6 border border-gray-300 shadow-sm">
             <div className="carousel rounded-box">
               {trending.people.week?.data?.results?.map((person) => {
                 return (
                   <div className="carousel-item p-2" key={person.id}>
-                    <img
-                      className="w-50"
-                      src={
-                        person.profile_path
-                          ? `https://image.tmdb.org/t/p/original${person.profile_path}`
-                          : noPhoto
-                      }
-                      alt={person.name}
-                    />
+                    <Link to={`/person/${person.id}`}>
+                      <img
+                        className="w-50"
+                        src={
+                          person.profile_path
+                            ? `https://image.tmdb.org/t/p/original${person.profile_path}`
+                            : noPhoto
+                        }
+                        alt={person.name}
+                      />
+                    </Link>
                   </div>
                 );
               })}
