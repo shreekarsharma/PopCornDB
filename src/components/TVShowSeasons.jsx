@@ -43,7 +43,6 @@ const TVShowSeasons = () => {
               <p className="text-xl">{season.overview}</p>
               <p className="font-medium text-xl">Episodes List:</p>
               {season.episodes?.map((episode) => {
-                console.log(episode);
 
                 return (
                   <div
