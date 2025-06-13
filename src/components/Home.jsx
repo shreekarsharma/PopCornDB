@@ -48,7 +48,7 @@ const Home = () => {
             defaultChecked
           />
           <div className="tab-content p-6 border border-gray-300 shadow-sm">
-            <div className="carousel rounded-box">
+            <div className="carousel rounded-box w-full">
               {trending.movies.today?.data?.results?.map((movie) => {
                 return (
                   <div className="carousel-item p-2" key={movie.id}>
@@ -76,7 +76,7 @@ const Home = () => {
             aria-label="This Week"
           />
           <div className="tab-content p-6 border border-gray-300 shadow-sm">
-            <div className="carousel rounded-box">
+            <div className="carousel rounded-box w-full">
               {trending.movies.week?.data?.results?.map((movie) => {
                 return (
                   <div className="carousel-item p-2" key={movie.id}>
@@ -110,7 +110,7 @@ const Home = () => {
             defaultChecked
           />
           <div className="tab-content p-6 border border-gray-300 shadow-sm">
-            <div className="carousel rounded-box">
+            <div className="carousel rounded-box w-full">
               {trending.tvshows.today?.data?.results?.map((tvshow) => {
                 return (
                   <div className="carousel-item p-2" key={tvshow.id}>
@@ -138,7 +138,7 @@ const Home = () => {
             aria-label="This Week"
           />
           <div className="tab-content p-6 border border-gray-300 shadow-sm">
-            <div className="carousel rounded-box">
+            <div className="carousel rounded-box  w-full">
               {trending.tvshows.week?.data?.results?.map((tvshow) => {
                 return (
                   <div className="carousel-item p-2" key={tvshow.id}>
@@ -172,7 +172,7 @@ const Home = () => {
             defaultChecked
           />
           <div className="tab-content p-6 border border-gray-300 shadow-sm">
-            <div className="carousel rounded-box">
+            <div className="carousel rounded-box  w-full">
               {trending.people.today?.data?.results?.map((person) => {
                 return (
                   <div className="carousel-item p-2" key={person.id}>
@@ -200,7 +200,7 @@ const Home = () => {
             aria-label="This Week"
           />
           <div className="tab-content p-6 border border-gray-300 shadow-sm">
-            <div className="carousel rounded-box">
+            <div className="carousel rounded-box  w-full">
               {trending.people.week?.data?.results?.map((person) => {
                 return (
                   <div className="carousel-item p-2" key={person.id}>

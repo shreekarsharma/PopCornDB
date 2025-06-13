@@ -50,7 +50,7 @@ const Movie = () => {
             {movie?.data?.title}{" "}
             <span>({movie?.data?.release_date.slice(0, 4)})</span>
           </h1>
-          <div className="flex items-center text-base">
+          <div className="flex items-center text-base flex-wrap">
             <p>{movie?.data?.status}</p>
             <FontAwesomeIcon icon={faCircle} className="text-[5px] mx-3" />
             <p>{dayjs(movie?.data?.release_date).format("MMMM D, YYYY")}</p>
@@ -161,7 +161,7 @@ const Movie = () => {
       {movieCredits?.data?.cast?.length && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Cast</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full w-full">
             {movieCredits?.data?.cast?.map((person) => {
               return (
                 <div className="carousel-item relative" key={person.credit_id}>
@@ -189,7 +189,7 @@ const Movie = () => {
       {movieCredits?.data?.crew?.length && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Crew</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {movieCredits?.data?.crew?.map((person) => {
               return (
                 <div className="carousel-item relative" key={person.credit_id}>
@@ -217,7 +217,7 @@ const Movie = () => {
       {movieImages?.data?.backdrops?.length && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Backdrops</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {movieImages?.data?.backdrops?.map((image) => {
               return (
                 <div className="carousel-item relative" key={image.file_path}>
@@ -239,7 +239,7 @@ const Movie = () => {
       {movieImages?.data?.posters?.length && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Posters</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {movieImages?.data?.posters?.map((image) => {
               return (
                 <div className="carousel-item relative" key={image.file_path}>
@@ -261,7 +261,7 @@ const Movie = () => {
       {movieVideos?.data?.results?.length && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Videos</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {movieVideos?.data?.results?.map((video) => {
               return (
                 <div className="carousel-item" key={video.id}>
@@ -308,7 +308,7 @@ const Movie = () => {
           <h1 className="text-white mb-5 text-2xl font-bold">
             Movie Recommendations
           </h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {movieRecommendations?.data?.results?.map((movie) => {
               return (
                 <div className="carousel-item relative" key={movie.id}>
@@ -332,7 +332,7 @@ const Movie = () => {
       {movieSimilar?.data?.results?.length && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Similar Movies</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {movieSimilar?.data?.results?.map((movie) => {
               return (
                 <div className="carousel-item relative" key={movie.id}>

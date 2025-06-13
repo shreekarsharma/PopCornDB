@@ -47,7 +47,7 @@ const TVShow = () => {
         />
         <div className="flex flex-col gap-2">
           <h1 className="text-4xl font-bold">{tvShow?.data?.name} </h1>
-          <div className="flex items-center text-base">
+          <div className="flex items-center text-base flex-wrap">
             <p>{tvShow?.data?.status}</p>
             <FontAwesomeIcon icon={faCircle} className="text-[5px] mx-3" />
             <p className="flex gap-1">
@@ -165,7 +165,7 @@ const TVShow = () => {
       {tvShowCredits?.data?.cast?.length > 0 && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Cast</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {tvShowCredits?.data?.cast?.map((person) => {
               return (
                 <div className="carousel-item relative" key={person.credit_id}>
@@ -206,7 +206,7 @@ const TVShow = () => {
       {tvShowCredits?.data?.crew?.length > 0 && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Crew</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {tvShowCredits?.data?.crew?.map((person) => {
               return (
                 <div className="carousel-item relative" key={person.credit_id}>
@@ -247,7 +247,7 @@ const TVShow = () => {
       {tvShowImages?.data?.backdrops?.length > 0 && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Backdrops</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {tvShowImages?.data?.backdrops?.map((image) => {
               return (
                 <div className="carousel-item relative" key={image.file_path}>
@@ -269,7 +269,7 @@ const TVShow = () => {
       {tvShowImages?.data?.posters?.length > 0 && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Posters</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {tvShowImages?.data?.posters?.map((image) => {
               return (
                 <div className="carousel-item relative" key={image.file_path}>
@@ -291,7 +291,7 @@ const TVShow = () => {
       {tvShowVideos?.data?.results?.length > 0 && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Videos</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {tvShowVideos?.data?.results?.map((video) => {
               return (
                 <div className="carousel-item" key={video.id}>
@@ -338,7 +338,7 @@ const TVShow = () => {
           <h1 className="text-white mb-5 text-2xl font-bold">
             TV Shows Recommendations
           </h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {tvShowRecommendations?.data?.results?.map((tvShow) => {
               return (
                 <div className="carousel-item relative" key={tvShow.id}>
@@ -364,7 +364,7 @@ const TVShow = () => {
           <h1 className="text-white mb-5 text-2xl font-bold">
             Similar TV Shows
           </h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {tvShowSimilar?.data?.results?.map((tvShow) => {
               return (
                 <div className="carousel-item relative" key={tvShow.id}>

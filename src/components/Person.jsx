@@ -27,10 +27,10 @@ const Person = () => {
                 ? `https://image.tmdb.org/t/p/original${person?.data?.profile_path}`
                 : noPhoto
             }
-            className="max-w-sm rounded-lg shadow-2xl"
+            className="max-w-sm rounded-lg shadow-2xl w-full"
           />
           <div>
-            <h1 className="text-5xl font-bold mb-5">{person?.data?.name}</h1>
+            <h1 className="text-3xl sm:text-5xl font-bold mb-5">{person?.data?.name}</h1>
             <p className="">
               <span className="font-medium">Birthday: </span>
               {dayjs(person?.data?.birthday).format("MMMM D, YYYY")}
@@ -46,7 +46,7 @@ const Person = () => {
       {personMovieCredits?.data?.cast?.length > 0 && (
         <div className="m-10">
           <h1 className=" mb-5 text-2xl font-bold">Movies — As Cast</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {personMovieCredits?.data?.cast.map((person) => {
               return (
                 <div className="carousel-item relative" key={person.credit_id}>
@@ -75,7 +75,7 @@ const Person = () => {
       {personTVShowCredits?.data?.cast?.length > 0 && (
         <div className="m-10">
           <h1 className=" mb-5 text-2xl font-bold">TV Shows — As Cast</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {personTVShowCredits?.data?.cast.map((person) => {
               return (
                 <div className="carousel-item relative" key={person.credit_id}>
@@ -104,7 +104,7 @@ const Person = () => {
       {personMovieCredits?.data?.crew?.length > 0 && (
         <div className="m-10">
           <h1 className=" mb-5 text-2xl font-bold">Movies — As Crew</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {personMovieCredits?.data?.crew.map((person) => {
               return (
                 <div className="carousel-item relative" key={person.credit_id}>
@@ -131,7 +131,7 @@ const Person = () => {
       {personTVShowCredits?.data?.crew?.length > 0 && (
         <div className="m-10">
           <h1 className=" mb-5 text-2xl font-bold">TV Shows — As Crew</h1>
-          <div className="carousel gap-5">
+          <div className="carousel gap-5 w-full">
             {personTVShowCredits?.data?.crew.map((person) => {
               return (
                 <div className="carousel-item relative" key={person.credit_id}>
