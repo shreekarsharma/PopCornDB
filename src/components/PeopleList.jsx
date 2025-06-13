@@ -18,8 +18,8 @@ const PeopleList = () => {
   }, [pageNumber, navigate, page]);
 
   return (
-    <>
-      <h1 className="text-3xl font-medium mb-10">Popular People</h1>
+    <div className="p-5">
+      <h1 className="text-2xl sm:text-3xl font-medium mb-10 text-center sm:text-left">Popular People</h1>
       <div className="flex flex-wrap gap-10 justify-center">
         {data?.data?.results?.map((person) => {
           return (
@@ -61,7 +61,7 @@ const PeopleList = () => {
           Next
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

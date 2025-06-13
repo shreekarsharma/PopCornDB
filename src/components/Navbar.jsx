@@ -4,7 +4,7 @@ import { faFilm, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-sky-50 shadow-sm sticky top-0 z-50">
+    <div className="navbar bg-sky-50 shadow-sm sticky top-0 z-50 text-black">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const Navbar = () => {
             <li className="font-medium">
               <details>
                 <summary className="text-base">Movies</summary>
-                <ul className="p-2 bg-sky-700">
+                <ul className="p-2">
                   <li>
                     <Link to="/movies/popular/1" className="text-base">
                       Popular

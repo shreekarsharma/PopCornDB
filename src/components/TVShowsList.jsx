@@ -36,8 +36,8 @@ const TVShowsList = () => {
     }
   }, [pageNumber, navigate, type, page]);
   return (
-    <>
-      <h1 className="text-3xl font-medium mb-10">{headingMap[type]}</h1>
+    <div className="p-5">
+      <h1 className="text-2xl sm:text-3xl font-medium mb-10 text-center sm:text-left">{headingMap[type]}</h1>
       <div className="flex flex-wrap gap-10 justify-center">
         {data?.data?.results?.map((tvshow) => {
           return (
@@ -83,7 +83,7 @@ const TVShowsList = () => {
           Next
         </button>
       </div>
-    </>
+    </div>
   );
 };
 
