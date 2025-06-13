@@ -95,7 +95,9 @@ const Navbar = () => {
               </details>
             </li>
             <li className="font-medium">
-              <Link to="/search" className="text-base"><FontAwesomeIcon icon={faMagnifyingGlass} className="text-xl" /></Link>
+              <Link to="/search" className="text-base">
+                <FontAwesomeIcon icon={faMagnifyingGlass} className="text-xl" />
+              </Link>
             </li>
           </ul>
         </div>
@@ -106,78 +108,101 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li className="font-medium">
-            <details>
-              <summary className="text-base">Movies</summary>
-              <ul className="p-2 bg-sky-50">
-                <li>
-                  <Link to="/movies/popular/1" className="text-base">
-                    Popular
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/movies/now-playing/1" className="text-base">
-                    Now Playing
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/movies/upcoming/1" className="text-base">
-                    Upcoming
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/movies/top-rated/1" className="text-base">
-                    Top Rated
-                  </Link>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li className="font-medium">
-            <details>
-              <summary className="text-base">TV Shows</summary>
-              <ul className="p-2 bg-sky-50">
-                <li>
-                  <Link to="/tvshow/popular/1" className="text-base">
-                    Popular
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/tvshow/airing-today/1" className="text-base">
-                    Airing Today
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/tvshow/on-the-air/1" className="text-base">
-                    On TV
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/tvshow/top-rated/1" className="text-base">
-                    Top Rated
-                  </Link>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li className="font-medium">
-            <details>
-              <summary className="text-base">People</summary>
-              <ul className="p-2 bg-sky-50">
-                <li>
-                  <Link to="/people/1" className="text-base">
-                    Popular
-                  </Link>
-                </li>
-              </ul>
-            </details>
-          </li>
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost rounded-field hover:bg-transparent hover:text-black focus:bg-transparent focus:text-black"
+            >
+              Movies
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content bg-white rounded-box z-1 mt-4 w-52 p-2 shadow-sm"
+            >
+              <li className="hover:bg-sky-100">
+                <Link to="/movies/popular/1" className="text-base">
+                  Popular
+                </Link>
+              </li>
+              <li className="hover:bg-sky-100">
+                <Link to="/movies/now-playing/1" className="text-base">
+                  Now Playing
+                </Link>
+              </li>
+              <li className="hover:bg-sky-100">
+                <Link to="/movies/upcoming/1" className="text-base">
+                  Upcoming
+                </Link>
+              </li>
+              <li className="hover:bg-sky-100">
+                <Link to="/movies/top-rated/1" className="text-base">
+                  Top Rated
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost rounded-field hover:bg-transparent hover:text-black focus:bg-transparent focus:text-black"
+            >
+              TV Shows
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content bg-white rounded-box z-1 mt-4 w-52 p-2 shadow-sm"
+            >
+              <li className="hover:bg-sky-100">
+                <Link to="/tvshow/popular/1" className="text-base">
+                  Popular
+                </Link>
+              </li>
+              <li className="hover:bg-sky-100">
+                <Link to="/tvshow/airing-today/1" className="text-base">
+                  Airing Today
+                </Link>
+              </li>
+              <li className="hover:bg-sky-100">
+                <Link to="/tvshow/on-the-air/1" className="text-base">
+                  On TV
+                </Link>
+              </li>
+              <li className="hover:bg-sky-100">
+                <Link to="/tvshow/top-rated/1" className="text-base">
+                  Top Rated
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost rounded-field hover:bg-transparent hover:text-black focus:bg-transparent focus:text-black"
+            >
+              People
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu dropdown-content bg-white rounded-box z-1 mt-4 w-52 p-2 shadow-sm"
+            >
+              <li className="hover:bg-sky-100">
+                <Link to="/people/1" className="text-base">
+                  Popular
+                </Link>
+              </li>
+            </ul>
+          </div>
         </ul>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li className="font-medium">
-            <Link to="/search" className="text-base"><FontAwesomeIcon icon={faMagnifyingGlass} className="text-xl" /></Link>
+            <Link to="/search" className="text-base">
+              <FontAwesomeIcon icon={faMagnifyingGlass} className="text-xl" />
+            </Link>
           </li>
         </ul>
       </div>
