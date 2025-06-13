@@ -161,7 +161,7 @@ const Movie = () => {
       {movieCredits?.data?.cast?.length && (
         <div className="mt-10">
           <h1 className="text-white mb-5 text-2xl font-bold">Cast</h1>
-          <div className="carousel gap-5 w-full w-full">
+          <div className="carousel gap-5 w-full">
             {movieCredits?.data?.cast?.map((person) => {
               return (
                 <div className="carousel-item relative" key={person.credit_id}>
